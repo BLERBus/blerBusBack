@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // tem que mudar para os seus dados
 app.use(
   connection(mysql,{
-      host     : 'localhost',
+      host     : 'mysql://b57a33b787941b:7313c64c@us-cdbr-iron-east-05.cleardb.net/heroku_315aeda3e82f23b?reconnect=true',
       user     : 'root',
       password : 'Katchin98',
       database : 'blerbus',
