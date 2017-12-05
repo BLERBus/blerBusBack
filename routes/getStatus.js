@@ -53,7 +53,7 @@ router.post('/', function(req, res, next) {
             let linhaSearch = req.body.linha
             console.log("linhaSearch request " + req.body.linha)
             if (err) return next("Cannot Connect");
-            var query = conn.query('select linha, lotacao, count(*) Contagem from statusonibus where linha= ? and isDeleted = 0 group by lotacao, linha', [linhaSearch],function(err,rows){
+            var query = conn.query('select linha, lotacao, count(*) Contagem from StatusOnibus where linha= ? and isDeleted = 0 group by lotacao, linha', [linhaSearch],function(err,rows){
                 if(err){
                     console.log(err);
                     return next("Mysql error, check your query");

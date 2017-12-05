@@ -7,7 +7,7 @@ router.get('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('SELECT id, pergunta FROM forum LIMIT 10', function(err,rows){
+            var query = conn.query('SELECT id, pergunta FROM Forum LIMIT 10', function(err,rows){
     
                 if(err){
                     console.log(err);
@@ -30,7 +30,7 @@ router.post('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('INSERT INTO forum (pergunta) values(?) ',pergunta, function(err,rows){
+            var query = conn.query('INSERT INTO Forum (pergunta) values(?) ',pergunta, function(err,rows){
     
                 if(err){
                     console.log(err);

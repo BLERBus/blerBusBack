@@ -16,7 +16,7 @@ router.post('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('INSERT INTO respostas (resposta, perguntaId, autor) values(?, ?, ?)', [resposta, perguntaId, autor] , function(err,rows){
+            var query = conn.query('INSERT INTO Respostas (resposta, perguntaId, autor) values(?, ?, ?)', [resposta, perguntaId, autor] , function(err,rows){
     
                 if(err){
                     console.log(err);

@@ -11,7 +11,7 @@ router.post('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('SELECT * FROM respostas where perguntaId = ?', id , function(err,rows){
+            var query = conn.query('SELECT * FROM Respostas where perguntaId = ?', id , function(err,rows){
     
                 if(err){
                     console.log(err);
