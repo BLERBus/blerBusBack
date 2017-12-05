@@ -7,7 +7,7 @@ router.get('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('SELECT id, pergunta FROM Forum LIMIT 10', function(err,rows){
+            var query = conn.query('SELECT id, pergunta FROM Forum', function(err,rows){
     
                 if(err){
                     console.log(err);
