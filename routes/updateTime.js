@@ -16,6 +16,9 @@ router.get('/', function(req, res, next) {
             // console.log(JSON.parse(JSON.stringify(rows)));
             // console.log(result)
 
+            if(result.length == 0){
+                return res.json({"status": "noRecords"})
+            }
             
             var data = {}
             for(var i=0; i < result.length; i++){
@@ -40,6 +43,7 @@ router.get('/', function(req, res, next) {
                     })
                 }
             }
+            res.json({"status": "200, updated"})
             });
     });
 });
