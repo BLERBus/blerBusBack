@@ -14,7 +14,7 @@ router.get('/', function(req, res, next){
                     return next("Mysql error, check your query");
                 }
 
-                var result = JSON.parse(JSON.stringify(rows)); 
+                let result = JSON.parse(JSON.stringify(rows)); 
                 //console.log(result.rows)
                 res.json(result);
     
@@ -26,7 +26,7 @@ router.post('/', function(req, res, next){
     console.log("forum post request")
     req.getConnection(function(err,conn){
 
-            var pergunta = req.body.pergunta;
+            let pergunta = req.body.pergunta;
         
             if (err) return next("Cannot Connect");
     
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next){
                 }
 
                 //console.log(result.rows)
-                res.json({"status": "200"});
+                res.json({"status": "200", "pergunta": pergunta});
     
                 });
         });

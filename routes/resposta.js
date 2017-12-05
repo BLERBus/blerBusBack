@@ -18,9 +18,13 @@ router.post('/', function(req, res, next){
                     return next("Mysql error, check your query");
                 }
 
-                var result = JSON.parse(JSON.stringify(rows)); 
-                console.log(result);
-                res.json(result); 
+                let result = JSON.parse(JSON.stringify(rows)); 
+                if (result.length > 0){
+                    res.json(result); 
+                }
+                else{
+                    res.json({"result": "No Data"}); 
+                }
                 });
         });
 })
