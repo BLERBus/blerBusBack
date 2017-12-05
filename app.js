@@ -11,6 +11,10 @@ var login = require('./routes/login');
 var getLinhas = require('./routes/getLinhas');
 var getStatus = require('./routes/getStatus');
 var updateTime = require('./routes/updateTime');
+var forum = require('./routes/forum');
+var resposta = require('./routes/resposta');
+var cadastro = require('./routes/cadastro');
+var responder = require('./routes/responder');
 
 var app = express();
 
@@ -49,6 +53,10 @@ app.use('/login', login);
 app.use('/getLinhas', getLinhas);
 app.use('/getStatus', getStatus);
 app.use('/updateTime', updateTime);
+app.use('/forum', forum);
+app.use('/resposta', resposta);
+app.use('/cadastro', cadastro);
+app.use('/responder', responder);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
