@@ -7,7 +7,7 @@ router.get('/', function(req, res, next){
         
             if (err) return next("Cannot Connect");
     
-            var query = conn.query('SELECT Denominacao_Provisoria FROM linhasOnibus LIMIT 10',function(err,rows){
+            var query = conn.query('SELECT Denominacao_Provisoria FROM linhasOnibus',function(err,rows){
     
                 if(err){
                     console.log(err);
